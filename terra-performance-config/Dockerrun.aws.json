@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "redis",
-      "image": "arm64v8/redis:8-alpine",
+      "image": "redis:8-alpine",
       "essential": false,
       "memory": 128,
       "portMappings": [
@@ -12,7 +12,7 @@
     },
     {
       "name": "web1",
-      "image": "<YOUR_IMAGE_URI_FROM_NGINX_NODE_REDIS_WEB>",
+      "image": "229209687346.dkr.ecr.us-east-1.amazonaws.com/bak-ng-red-nd-ter-doc",
       "essential": false,
       "links": ["redis"],
       "memory": 256,
@@ -22,7 +22,7 @@
     },
     {
       "name": "web2",
-      "image": "<YOUR_IMAGE_URI_FROM_NGINX_NODE_REDIS_WEB>",
+      "image": "229209687346.dkr.ecr.us-east-1.amazonaws.com/bak-ng-red-nd-ter-doc",
       "essential": false,
       "links": ["redis"],
       "memory": 256,
@@ -32,7 +32,7 @@
     },
     {
       "name": "nginx-proxy",
-      "image": "<YOUR_IMAGE_URI_FROM_NGINX_NODE_REDIS_NGINX>",
+      "image": "229209687346.dkr.ecr.us-east-1.amazonaws.com/web-ng-red-nd-ter-doc",
       "essential": true,
       "memory": 128,
       "links": ["web1", "web2"],
