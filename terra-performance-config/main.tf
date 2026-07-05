@@ -14,7 +14,7 @@ data "aws_subnets" "default" {
 }
 
 resource "aws_s3_object" "dockerrun" {
-  bucket       = "pravesh-ebs-terra-performance-bucket"
+  bucket       = "dep-229209687346-us-east-1-an"
   key          = "eb-demo/Dockerrun.aws.json"
   source       = "Dockerrun.aws.json"
   content_type = "application/json"

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: pravesh2003/nginx-node-redis:v2
+        image: brajesh2026/nginx-node-redis:v2
         ports:
         - containerPort: 5000
         livenessProbe:
