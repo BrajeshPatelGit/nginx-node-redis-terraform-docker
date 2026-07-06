@@ -7,8 +7,8 @@ variable "env_name" {
 }
 
 variable "region" {
-  type        = string
-  default     = "us-east-1"
+  type    = string
+  default = "us-east-1"
 }
 
 
@@ -17,5 +17,5 @@ variable "description" {
 }
 
 variable "instance_type" {
-  default = "t4g.micro"  # ARM64 Graviton, if using AMD64, change it to t3.micro or small
+  default = "t4g.micro" # ARM64 Graviton, if using AMD64, change it to t3.micro or small
 }

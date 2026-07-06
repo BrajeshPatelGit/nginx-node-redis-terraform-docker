@@ -1,0 +1,29 @@
+version: "3"
+services:
+  redis:
+    image: redis:8-alpine
+    ports:
+      - "6379:6379"
+  web1:
+    image: 229209687346.dkr.ecr.us-east-1.amazonaws.com/bak-ng-red-nd-ter-doc
+    hostname: web1
+    restart: on-failure
+    depends_on:
+      - redis
+    ports:
+      - "81:5000"
+  web2:
+    image: 229209687346.dkr.ecr.us-east-1.amazonaws.com/bak-ng-red-nd-ter-doc
+    hostname: web2
+    restart: on-failure
+    depends_on:
+      - redis
+    ports:
+      - "82:5000"
+  nginx:
+    image: 229209687346.dkr.ecr.us-east-1.amazonaws.com/web-ng-red-nd-ter-doc
+    ports:
+      - "80:80"
+    depends_on:
+      - web1
+      - web2
