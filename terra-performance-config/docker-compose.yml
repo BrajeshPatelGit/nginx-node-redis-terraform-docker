@@ -27,3 +27,6 @@ services:
     depends_on:
       - web1
       - web2
+    environment:
+      name: "DEPLOYED-WITH-ebs"
+      value: "terra-tuning"
